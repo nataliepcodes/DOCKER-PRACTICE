@@ -152,7 +152,14 @@ docker logs {container ID} = View logs from service running inside the container
 
 docker stop {container} = Stop one or more running containers
 
-docker run -d -p {HOST_PORT}:{CONTAINER_PORT} {name}:{tag} = Publish container's port to the host (-p or --publish)
+docker run -d -p {HOST_PORT}:{CONTAINER_PORT} {name}:{tag} = Publish container's port to 
+the host (-p or --publish)
+
+docker ps -a = Lists all containers, running and stopped
+
+docker start {container ID} = Starts previously stopped container
+
+docker run --name {ENTER CONTAINER NAME} = --name flag lets to create a custom name
 
 ------------------------------------------------------------------------------------------
 
@@ -180,14 +187,20 @@ Note: only 1 service can run on a specific port on the host port at the same tim
 I can choose any local host port, although it is standard to use the same port as the 
 container is using. E.g. if MySQL is on port 3306, then localhost to be 3306 also
 
-
 ------------------------------------------------------------------------------------------
 
 
 
 Start and Stop containers
 ------------------------------------------------------------------------------------------
-
+-- 'docker run' command is creating a new container every time, it doesnt reuse the 
+previous one
+-- try 'docker ps -a' to check all containers, running and stopped
+-- 'docker stop {container ID}' 
+-- 'docker start {container ID}'
+-- Docker generates names and IDs for containers but we can create our own name when 
+initially running a container. Use --name flag
+e.g. docker run --name charlie-test -d -p 80:80 nginx:1.25
 ------------------------------------------------------------------------------------------
 
 
