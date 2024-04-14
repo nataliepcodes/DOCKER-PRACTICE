@@ -53,7 +53,27 @@ which fetches and runs the relevant Docker artifacts
 
 
 Virtual Machine vs Docker
-- Docker is the next step / evolution from VMs
+OS has 2 layers:
+1. OS application layer: runs on top of the kernel layer (e.g. Microsoft Word, 
+Google Chrome, etc apps).
+2. OS kernel layer: communicates with hardware components of the machine - 
+e.g. CPU, storage
+Kernel interacts between HW and SW components. Kernel is a core of every OS.
+
+- Docker is the virtualization tool, next step / evolution from VMs
+- Docker virtualizes the OS applications layer, container services and apps are 
+on top of that layer. Doesn't have it's own kernel. Uses the kernel of the host.
+- VM has both the OS application layer and OS kernel layer. It virtualizes a 
+complete OS. If I download a VM image, it will not use the host kernel, it will 
+have its own.
+- Docker images/packages are much smaller, they implement only 1 layer of OS
+- SIZE: Docker - MB size, VM - GB size
+- SPEED: Docker in seconds to start, VM in minutes
+- COMPATIBILITY: Docker only with Linux, VM compatible with all OS
+- Linux based Docker image cannot use Windows kernel. Most containers are Linux 
+based, originally built for Linux OS
+- There's a Docker Desktop for Windows and Mac which makes possible to run Linux based 
+containers on Windows or MacOS (uses Hypervisor layer..)
 
 Install Docker
 Docker Images vs Containers
