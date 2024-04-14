@@ -208,13 +208,24 @@ e.g. docker run --name charlie-test -d -p 80:80 nginx:1.25
 
 Private Docker Registries
 ------------------------------------------------------------------------------------------
-
+- Public: available for all, e.g. on Docker Hub
+- Private: 
+-- individual company Docker images
+-- need to register and authenticate before accessing a private Registry
+-- many cloud providers (AWS, Google Cloud, Azure) offer privater Docker Registry service
+-- Docker Hub also has private Docker Registry
 ------------------------------------------------------------------------------------------
 
 
 
 Registry vs Repository
 ------------------------------------------------------------------------------------------
+-- Docker Registry is a service that provides storage of docker images, can be hosted by 
+3rd party (e.g. AWS ECR) or by me (!!), inside the registry there are repositories for 
+various docker images (e.g. my-app, my-service, charlie-test)
+-- Docker Repository is a collection of images that are related, same name although 
+different versions (see Docker Hub structure of images, it's public, although private has
+a similar concept, but private)
 
 ------------------------------------------------------------------------------------------
 
