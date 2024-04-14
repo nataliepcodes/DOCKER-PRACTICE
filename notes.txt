@@ -161,6 +161,8 @@ docker start {container ID} = Starts previously stopped container
 
 docker run --name {ENTER CONTAINER NAME} = --name flag lets to create a custom name
 
+docker build {path} = Builds a Docker image from a Dockerfile, can have -t to set a tag
+
 ------------------------------------------------------------------------------------------
 
 
@@ -231,25 +233,48 @@ a similar concept, but private)
 
 
 
-Dockerfile - Dockerize Node.js app
+Dockerfile - EXAMPLE: Dockerize Node.js app
 ------------------------------------------------------------------------------------------
 -- Creating own custom images: The how
 Once the app is ready I would want to deploy it to the server as a Docker container
 To do that:
 - I need to create a "definition" on how to build the image from my application
 - the definition is written in a Dockerfile (it is a text dociment which containes various
-commands for assembling an image (Is it a Makefile? Or same logic? Similar? - (!! to be clarified)))
+commands for assembling an image
 - Docker can build an image by reading the instructions from Docker file
 Practice/Example:
 Write a Dockerfile for Node.js app
 After that, build a Docker image from that Dockerfile
-
+-- Docker files start from a parent / "base image", and image that Docker images is based on
+-- I choose the base image, it will depend on the tools I need to have available (python, node)
 ------------------------------------------------------------------------------------------
 
 
 
-Build Image
+Build Image (49:09)
 ------------------------------------------------------------------------------------------
+
+Dockerfile (example)
+************************************************************************************
+
+FROM node:19-alpine
+
+COPY package.json /app/        <- 'package.js' is SOURCE and '/app/' is DESTINATION
+COPY src /app/
+
+WORKDIR /app                   <- sets this path as a default location
+
+RUN npm install 
+
+CMD ["node", "server.js"]
+
+
+************************************************************************************
+
+-- TO RUN a Docker file, enter this command: docker build -t node-app:1.0 .
+
+Building an image from Dockerfile for app named 'node-app', which is version 1.0
+and located '.' in the current directory
 
 ------------------------------------------------------------------------------------------
 
