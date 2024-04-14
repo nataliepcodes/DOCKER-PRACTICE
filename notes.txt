@@ -147,12 +147,27 @@ docker run {name}:{tag} = Creates a container from a given image and starts it
 docker run -d or --detach {name}:{tag} = Runs container in the background and 
 prints the container ID
 
+docker logs {container ID} = View logs from service running inside the container
+(which are present at the time of execution)
+
+docker stop {container} = Stop one or more running containers
+
 ------------------------------------------------------------------------------------------
 
 
 
 
-Port Binding
+Port Binding - Container Port vs Host Port
+App inside the container runs in an isolated Docker network, on a specific port
+Apps have standard ports (e.g. nginx runs on port 80, redis runs on port 6379)
+If I try to access the nginx port of the container on the browser (localhost:80), 
+it will not work!! It doesn't!
+
+need to xpose the container's port (e.g. nginx port 80) to the local host port 
+(the machine the container runs on), any specific port
+Port binding: binding the container's port to the host's port to make the 
+service available to the "outside world"
+
 Start and Stop containers
 Private Docker Registries
 Registry vs Repository
