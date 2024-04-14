@@ -233,6 +233,16 @@ a similar concept, but private)
 
 Dockerfile - Dockerize Node.js app
 ------------------------------------------------------------------------------------------
+-- Creating own custom images: The how
+Once the app is ready I would want to deploy it to the server as a Docker container
+To do that:
+- I need to create a "definition" on how to build the image from my application
+- the definition is written in a Dockerfile (it is a text dociment which containes various
+commands for assembling an image (Is it a Makefile? Or same logic? Similar? - (!! to be clarified)))
+- Docker can build an image by reading the instructions from Docker file
+Practice/Example:
+Write a Dockerfile for Node.js app
+After that, build a Docker image from that Dockerfile
 
 ------------------------------------------------------------------------------------------
 
