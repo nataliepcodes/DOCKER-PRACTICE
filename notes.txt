@@ -160,20 +160,25 @@ docker run -d -p {HOST_PORT}:{CONTAINER_PORT} {name}:{tag} = Publish container's
 
 Port Binding - Container Port vs Host Port
 ------------------------------------------------------------------------------------------
-App inside the container runs in an isolated Docker network, on a specific port
+-- an app inside the container runs in an isolated Docker network, on a specific port.
 Apps have standard ports (e.g. nginx runs on port 80, redis runs on port 6379)
-If I try to access the nginx port of the container on the browser (localhost:80), 
+-- If I try to access the nginx port of the container on the browser (localhost:80), 
 it will not work!! It doesn't!
-
-need to xpose the container's port (e.g. nginx port 80) to the local host port 
-(the machine the container runs on), any specific port
-Port binding: binding the container's port to the host's port to make the 
+-- I need to xpose the container's port (e.g. nginx port 80) to the local host port 
+(the machine the container runs on - this case, my machine :D ), any specific port.
+-- Port binding: binding the container's port to the host's port to make the 
 service available to the "outside world" 
 
 e.g.:
 $ docker run -d -p 9000:80 nginx:1.25
 
-Test, if it works: http://localhost:9000/ ( it works!! :D )
+Test, if it works: http://localhost:9000/ ( it works!! :D so cool!) 
+
+Note: only 1 service can run on a specific port on the host port at the same time
+( 1 service on port 9000)
+
+I can choose any local host port, although it is standard to use the same port as the 
+container is using. E.g. if MySQL is on port 3306, then localhost to be 3306 also
 
 
 ------------------------------------------------------------------------------------------
