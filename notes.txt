@@ -76,10 +76,34 @@ based, originally built for Linux OS
 containers on Windows or MacOS (uses Hypervisor layer..)
 
 Install Docker
+https://docs.docker.com/get-docker/
+
+
 Docker Images vs Containers
+- Docker image: executable application artifact (includes app source code, env configs, 
+any services needed - e.g. node, npm for JS, environment variables, directories, files etc)
+- Docker package is called an image
+- Docker container: starts application in pre-configured environment, a running instance of 
+the image; containers are run from images
+- can run multiple containers from one image
+
+
 Docker Registries
+- storage and distribution system for Docker images available online, Docker hosts 
+the biggest Docker Registry - Docker Hub - there I can find and share Docker images
+- official images are available from various applications, e.g. Redis, Mongo, Postgres; 
+and maintained by the software authors or Docker community
+
+
 Docker Image Versions
+- Docker images are versioned by image tags
+- 'latest' is a special tag that all images have - means a latest release / 
+latest built image
+
 Main Docker Commands - Pull and Run Docker containers
+docker images = List all Docker images
+docker ps = List running containers
+
 Port Binding
 Start and Stop containers
 Private Docker Registries
