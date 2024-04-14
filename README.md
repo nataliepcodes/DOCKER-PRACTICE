@@ -7,3 +7,4 @@ Goals: Learn more about it. Try it again - and make it work, this time :)
 # Resources
 
 - [Docker Crash Course for Absolute Beginners by TechWorld with Nana - 1h](https://youtu.be/pg19Z8LL06w?si=pCpn_YpJH3JRUZc2)
+- [Docker Training by David Elner](https://github.com/delner/docker-training?tab=readme-ov-file)
