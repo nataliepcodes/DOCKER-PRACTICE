@@ -12,7 +12,7 @@ and environment configurations, dependencies, libraries etc)
 
 
 
-What problems Docker solve in the development and deployment processes?
+What problems does Docker solve in the development and deployment processes?
 ------------------------------------------------------------------------------------------
 Development process BEFORE: 
 - all the app services had to be installed & configured directly on each developer's OS 
@@ -152,6 +152,8 @@ docker logs {container ID} = View logs from service running inside the container
 
 docker stop {container} = Stop one or more running containers
 
+docker run -d -p {HOST_PORT}:{CONTAINER_PORT} {name}:{tag} = Publish container's port to the host (-p or --publish)
+
 ------------------------------------------------------------------------------------------
 
 
@@ -166,7 +168,14 @@ it will not work!! It doesn't!
 need to xpose the container's port (e.g. nginx port 80) to the local host port 
 (the machine the container runs on), any specific port
 Port binding: binding the container's port to the host's port to make the 
-service available to the "outside world"
+service available to the "outside world" 
+
+e.g.:
+$ docker run -d -p 9000:80 nginx:1.25
+
+Test, if it works: http://localhost:9000/ ( it works!! :D )
+
+
 ------------------------------------------------------------------------------------------
 
 
