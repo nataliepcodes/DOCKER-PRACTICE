@@ -1,0 +1,56 @@
+<=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>
+* [Docker Crash Course for Absolute Beginners by TechWorld with Nana](https://youtu.be/pg19Z8LL06w?si=pCpn_YpJH3JRUZc2)
+
+What is Docker?
+- virtualization software which simplifies the development and deployment of apps
+- Docker packages into a container everything that the app needs to run it (e.g. runtime and environment configurations, dependencies, libraries etc)
+- this package is portable and can be shared & distributed
+
+
+What problems Docker solve in the development and deployment processes?
+Development process BEFORE: 
+- all the app services had to be installed & configured directly on each developer's OS locally on their machine (e.g. db's, cache, messaging microservices, etc)
+- installation process is OS / machine dependent (e.g. Mac OS, Linux etc) and there are many steps in installation processes with high chances that something could go wrong
+- tedious process for setting up a development environment and can be very complex, depending on the app (e.g. if app has 10 services, each would need to be installed by each developer locally..)
+Development process AFTER:
+- with containers the developers do not need to install anything directly to their OS
+- developers can start a specific service using 1 Docker command (e.g. docker run postgres, which would fetch the relevant package from the web and starts it on the developer's computer)
+- there's one command that is the same for all Operating Systems and same command for all services
+- so: if the app has 10 services, then the developer needs to run 10 commands (easy! :)
+- Docker standardized the process of running any service on any local development environment
+- easier and faster
+- easier to run different version of the same app, with no conflicts
+
+Deployment process BEFORE:
+- Development team produced the application/artifact and its installation instructions (how to install & confure the app on the server) + if the db was used, then also instructions for how to install & configure the db, so that the app can use it
+- Development team handed over the artifact and instructions to Ops team, who would handle the installation and config of apps & their dependencies
+- Everything had to configured and installed directrly on the server's OS, which can be error-prone, potential dependency version conflicts
+- miscommunication between dev and ops teams because instructions are written / textual - human errors, back and forth comms 
+Deployment process AFTER:
+- Developers create a package which already includes the code, and all the relevant dependencies and configurations
+- No configurations are required on the server, except Docker runtime, which leaves less opportunities for errors and delays
+- Ops team needs to install Docker runtime on the server - one time effort
+- When artifacts received from the Development team, Ops team runs the Docker command which fetches and runs the relevant Docker artifacts
+
+
+Virtual Machine vs Docker
+- Docker is the next step / evolution from VMs
+
+Install Docker
+Docker Images vs Containers
+Docker Registries
+Docker Image Versions
+Main Docker Commands - Pull and Run Docker containers
+Port Binding
+Start and Stop containers
+Private Docker Registries
+Registry vs Repository
+Dockerfile - Dockerize Node.js app
+Build Image
+Docker UI Client
+Overview: Docker in complete software development lifecycle
+
+Where to go from here
+
+
+<=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>
