@@ -174,7 +174,7 @@ it will not work!! It doesn't!
 -- I need to xpose the container's port (e.g. nginx port 80) to the local host port 
 (the machine the container runs on - this case, my machine :D ), any specific port.
 -- Port binding: binding the container's port to the host's port to make the 
-service available to the "outside world" 
+service available to the "outside world"..but the localhost is the "inside world"? (to be clarified..)
 
 e.g.:
 $ docker run -d -p 9000:80 nginx:1.25
